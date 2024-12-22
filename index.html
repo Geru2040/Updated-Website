@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Previous head section remains unchanged -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepX Beta - Fisch Script</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Previous styles remain unchanged */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: rgba(24,23,28,255);
+            min-height: 100vh;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .hero {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        .image-section {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-section img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(154,243,239,0.1);
+        }
+
+        .content-section {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        h1, h2 {
+            background: linear-gradient(
+                45deg,
+                rgba(154,243,239,1),
+                rgba(214,160,246,1)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-width: 160px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(
+                45deg,
+                rgba(154,243,239,0.9),
+                rgba(214,160,246,0.9)
+            );
+            color: rgba(24,23,28,255);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(154,243,239,0.2);
+        }
+
+        .discord-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(
+                45deg,
+                rgba(154,243,239,0.9),
+                rgba(214,160,246,0.9)
+            );
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgba(24,23,28,255);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .discord-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(154,243,239,0.3);
+        }
+
+        /* New Features Section Styles */
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(
+                45deg,
+                rgba(154,243,239,1),
+                rgba(214,160,246,1)
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .feature-description {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .content-section {
+                padding: 1rem 0;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="image-section">
+                <img src="https://i.ibb.co/8P9HgJ4/IMG-0264.png" alt="DeepX Script Interface">
+            </div>
+            <div class="content-section">
+                <h1>Welcome to DeepX Beta</h1>
+                <p>
+                    Experience the most powerful Fisch script, featuring advanced automation, 
+                    seamless integration, and regular updates. Elevate your gameplay with our 
+                    cutting-edge features and intuitive interface.
+                </p>
+                <div class="buttons">
+                    <!-- Updated Get Script Button with Redirect -->
+                    <button class="btn btn-primary" onclick="window.location.href='https://discord.gg/fxsWY6dGKk';">Get Script</button>
+                    <button class="btn btn-secondary">Get Key</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Features Section -->
+        <section class="features">
+            <h2>Script Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="feature-title">Auto Cast</h3>
+                    <p class="feature-description">
+                        Intelligent auto-casting system that optimizes your spell usage and timing for maximum efficiency.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="feature-title">Auto Farm</h3>
+                    <p class="feature-description">
+                        Advanced farming automation.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 class="feature-title">One-Step Key System</h3>
+                    <p class="feature-description">
+                        Simple and secure one-step key system for instant access to all features.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="feature-title">Anti-Detection</h3>
+                    <p class="feature-description">
+                        <strong>Very Soon</strong> Advanced protection systems to ensure safe and undetectable script execution.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <h3 class="feature-title">Customizable Settings</h3>
+                    <p class="feature-description">
+                        <strong>Very Soon</strong> Fully customizable configuration options to tailor the script to your specific needs.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-arrows-rotate"></i>
+                    </div>
+                    <h3 class="feature-title">Regular Updates</h3>
+                    <p class="feature-description">
+                        <strong>Very Soon</strong> Continuous updates and improvements to maintain optimal performance and compatibility.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <a href="https://discord.gg/fxsWY6dGKk" target="_blank" class="discord-btn" title="Join our Discord">
+        <i class="fab fa-discord"></i>
+    </a>
+</body>
+</html>
